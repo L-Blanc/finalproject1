@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workforce App</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/workforcemain.css') }}">
+</head>
+<body>
+{% import "bootstrap/wtf.html" as wtf %}
+
+  <div class="container p-3 mb-2 bg-transparent text-white">
+    <div class="row">
+      <div class="col-md-12">
+
+        <h1 class="text-center mt-3 display-1 text-white">Welcome to the U.S Workforce App!</h1>
+
+        <p class="lead text-center pt-4 pb-4">Using this form, users will be able to learn about the individuals who make up our workforce in the United States. By selecting an occupation, industry and state, you will learn about employment demographics, wages, unemployment rates and much much more!</p>
+
+        <p class="lead text-center pt-4 pb-4"> Please select each of the following: </p>
+
+  		</div>
+  	</div>
+
+  	<div class="row">
+  		<div class="col-md-8 col-lg-6 mx-md-auto mx-lg-auto">
+  			<div class="bg-info text-white p-4">
+
+  	<!-- add some goodies to the form - for help, see
+  	     https://pythonhosted.org/Flask-Bootstrap/forms.html
+  		 -->
+         {{ wtf.quick_form(form, action=url_for("stat_detail"), method="post") }}
+
+           <p class="footer">This project was created by Lokela Blanc in April 2020 for the Advanced Web Apps Course at the University of Florida. The full GitHub Repo can be viewed <a href="https://github.com/L-Blanc/workforce_app">here.</a></p>
+  	   </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
